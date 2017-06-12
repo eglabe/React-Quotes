@@ -70,4 +70,4 @@ var inputQuote = React.createClass({
 
 });
 
-module.exports = inputQuote;
+module.exports = InputQuote;
