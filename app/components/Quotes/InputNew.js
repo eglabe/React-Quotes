@@ -1,13 +1,24 @@
 var React = require("react");
 
-var inputQuote = React.createClass({
+var InputNew = React.createClass({
 
     getInitialState: function() {
-        return {
+        return {        
             quote: ""
         };
     },
 
+  handleChange: function(event) {
+    console.log("TEXT CHANGED");
+
+    // Here we create syntax to capture any change in text to the query terms (pre-search).
+    // See this Stack Overflow answer for more details:
+    // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
+    var newState = {};
+    newState[event.target.id] = event.target.value;
+    this.setState(newState);
+  },
+  
   handleSubmit: function(event) {
     event.preventDefault();
     console.log("CLICKED");
@@ -35,7 +46,7 @@ var inputQuote = React.createClass({
                                 {/* Note how we associate the text-box inputs with the state values */}
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
-                                        <h4 className=""><strong>Quote</strong></h4>
+                                        <h4><strong>Quote</strong></h4>
                                         <input
                                         type="text"
                                         value={this.state.quote}
@@ -49,12 +60,7 @@ var inputQuote = React.createClass({
 
                                     {/* Here we create the onClick event that triggers the HandleSubmit */}
                                     <div className="pull-right">
-                                        <button
-                                        type="submit"
-                                        className="btn btn-success"
-                                        >
-                                        <h4>Submit</h4>
-                                        </button>
+                                        <button type="submit" className="btn btn-success">Submit</button>
                                     </div>
                                 </form>
 
@@ -70,4 +76,4 @@ var inputQuote = React.createClass({
 
 });
 
-module.exports = InputQuote;
+module.exports = InputNew;
