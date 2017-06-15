@@ -33,7 +33,7 @@ var InputNew = React.createClass({
                 <div className="row">
                     <div className="col-lg-12">
 
-                        <div className="panel panel-primary">
+                        <div className="panel panel-default">
                             <div className="panel-heading">
                                 <h1 className="panel-title">
                                 <strong>
@@ -46,15 +46,7 @@ var InputNew = React.createClass({
                                 {/* Note how we associate the text-box inputs with the state values */}
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
-                                        <h4><strong>Quote</strong></h4>
-                                        <input
-                                        type="text"
-                                        value={this.state.quote}
-                                        className="form-control"
-                                        id="quoteInput"
-                                        onChange={this.handleChange}
-                                        required
-                                        />
+                                        <input type="text" value={this.state.search} placeholder="To be or not to be..." className="form-control" id="search" onChange={this.handleChange} required/>
 
                                     </div>
 
